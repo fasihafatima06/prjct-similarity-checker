@@ -1,0 +1,15 @@
+{
+  "name": "hackathon-originality-analyzer",
+  "version": "1.0.0",
+  "description": "Full-stack Hackathon Originality & Similarity Analyzer built with live GitHub API data and deterministic multi-signal comparison engine.",
+  "scripts": {
+    "dev": "concurrently -n \"backend,frontend\" -c \"blue,green\" \"npm run backend\" \"npm run frontend\"",
+    "start": "npm run dev",
+    "backend": "cd backend && npm run dev",
+    "frontend": "cd frontend && npm run dev",
+    "build": "cd backend && npm run build && cd ../frontend && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
