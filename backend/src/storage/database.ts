@@ -3,7 +3,11 @@ import fs from 'fs';
 import path from 'path';
 import { AnalysisJob, ProjectFingerprint, SimilarityResult, ReviewStatus } from '../types/analysis.js';
 
-const DATA_DIR = path.join(process.cwd(), 'data');
+const DATA_DIR = typeof __dirname !== 'undefined'
+  ? path.resolve(__dirname, '../../data')
+  : (fs.existsSync(path.join(process.cwd(), 'backend', 'data'))
+    ? path.join(process.cwd(), 'backend', 'data')
+    : path.join(process.cwd(), 'data'));
 const PREVIOUS_PROJECTS_FILE = path.join(DATA_DIR, 'previous_projects.json');
 const ANALYSES_FILE = path.join(DATA_DIR, 'analyses.json');
 

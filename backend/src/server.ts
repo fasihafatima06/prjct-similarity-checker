@@ -37,13 +37,13 @@ const localFrontendDist = path.join(process.cwd(), 'public');
 
 if (fs.existsSync(frontendDist)) {
   app.use(express.static(frontendDist));
-  app.get('*', (req, res, next) => {
+  app.get('{*path}', (req, res, next) => {
     if (req.path.startsWith('/api')) return next();
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
 } else if (fs.existsSync(localFrontendDist)) {
   app.use(express.static(localFrontendDist));
-  app.get('*', (req, res, next) => {
+  app.get('{*path}', (req, res, next) => {
     if (req.path.startsWith('/api')) return next();
     res.sendFile(path.join(localFrontendDist, 'index.html'));
   });

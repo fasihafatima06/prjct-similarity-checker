@@ -25,11 +25,13 @@ export const PreviousProjects: React.FC<PreviousProjectsProps> = () => {
 
   const loadProjects = async () => {
     setIsLoading(true);
+    setErrorMsg(null);
     try {
       const data = await getPreviousProjects();
       setProjects(data);
     } catch (err: any) {
       console.error('Failed to load previous projects:', err);
+      setErrorMsg('Could not connect to backend server. Make sure the backend server is running on port 3001.');
     } finally {
       setIsLoading(false);
     }

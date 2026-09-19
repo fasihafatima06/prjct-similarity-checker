@@ -126,7 +126,10 @@ export const NewAnalysis: React.FC<NewAnalysisProps> = ({ onNavigate, preset }) 
 
       onNavigate('processing', { id: res.analysisId });
     } catch (err: any) {
-      setErrorMsg(err.message || 'Failed to initialize analysis session.');
+      const msg = err.message === 'Failed to fetch'
+        ? 'Could not connect to backend server. Make sure the backend server is running on port 3001.'
+        : (err.message || 'Failed to initialize analysis session.');
+      setErrorMsg(msg);
       setIsSubmitting(false);
     }
   };
