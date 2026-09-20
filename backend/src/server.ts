@@ -35,6 +35,21 @@ app.get('/api/health', (_req, res) => {
   });
 });
 
+// Root Welcome Route & Fallback Health
+app.get('/', (_req, res) => {
+  res.json({
+    status: 'ok',
+    message: '🚀 Hackathon Originality & Similarity Analyzer API Server is running online!',
+    healthCheck: '/api/health',
+    endpoints: ['/api/analyses', '/api/comparisons', '/api/previous-projects'],
+    timestamp: new Date().toISOString(),
+  });
+});
+
+app.get('/health', (_req, res) => {
+  res.redirect('/api/health');
+});
+
 // Serve frontend static files if dist exists (Unified Single-Server Deployment)
 const frontendDist = path.join(process.cwd(), '..', 'frontend', 'dist');
 const localFrontendDist = path.join(process.cwd(), 'public');
