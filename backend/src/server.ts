@@ -12,7 +12,11 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PATCH', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
+}));
 app.use(express.json());
 
 // API Routes
@@ -37,13 +41,13 @@ const localFrontendDist = path.join(process.cwd(), 'public');
 
 if (fs.existsSync(frontendDist)) {
   app.use(express.static(frontendDist));
-  app.get('{*path}', (req, res, next) => {
+  app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api')) return next();
     res.sendFile(path.join(frontendDist, 'index.html'));
   });
 } else if (fs.existsSync(localFrontendDist)) {
   app.use(express.static(localFrontendDist));
-  app.get('{*path}', (req, res, next) => {
+  app.get('*', (req, res, next) => {
     if (req.path.startsWith('/api')) return next();
     res.sendFile(path.join(localFrontendDist, 'index.html'));
   });

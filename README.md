@@ -1,13 +1,15 @@
 # 🛡️ Hackathon Integrity — Originality & Similarity Intelligence System
 
 [![Live Demo](https://img.shields.io/badge/Live%20Demo-Netlify-00C7B7?style=for-the-badge&logo=netlify)](https://prjc-similarity-checker.netlify.app/)
+[![Demo Video](https://img.shields.io/badge/Demo%20Video-YouTube-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://youtu.be/dY87gKsYJMs)
 [![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![React](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![Express](https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=express&logoColor=white)](https://expressjs.com/)
 
 **Hackathon Integrity** is an advanced, automated originality and similarity detection system built specifically for hackathon organizers, judges, and code reviewers. It analyzes public GitHub repository submissions using a deterministic multi-signal comparison engine to identify code reuse, structural overlaps, and historical project re-submissions.
 
-🌐 **Live Web Application**: [https://prjc-similarity-checker.netlify.app/](https://prjc-similarity-checker.netlify.app/)
+🌐 **Live Web Application**: [https://prjc-similarity-checker.netlify.app/](https://prjc-similarity-checker.netlify.app/)  
+🎬 **Demo Video**: [https://youtu.be/dY87gKsYJMs](https://youtu.be/dY87gKsYJMs)
 
 ---
 
